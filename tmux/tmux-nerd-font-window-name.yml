@@ -1,0 +1,7 @@
+config:
+  fallback-icon: "?" # icon to use if no definition is found
+  show-name: false # show the window name with the icon
+
+icons:
+  nvim: " "
+  fish: " " # overwrite with your own symbol (Nerd Font icon, emoji, whatever!)

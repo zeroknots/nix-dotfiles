@@ -1,0 +1,2 @@
+#!/bin/sh
+sed -i '' 's/colors:.*/colors:\ \*dark/g' /Users/ops/.config/alacritty/tokyo-night.yaml

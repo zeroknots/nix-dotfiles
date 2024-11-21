@@ -1,0 +1,2 @@
+#!/bin/sh
+sed -i ''  's/colors:.*/colors:\ \*light/g' /Users/jon/.config/alacritty/colors.yml 

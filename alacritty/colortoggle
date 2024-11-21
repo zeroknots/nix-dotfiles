@@ -1,0 +1,10 @@
+#!/bin/sh
+echo $DARKMODE
+case $DARKMODE in
+    "0")
+	echo "darkmode off"
+        /Users/jon/.config/alacritty/colorscheme-light;;
+    "1")
+	echo "darkmode on"
+	/Users/jon/.config/alacritty/colorscheme-dark;;
+esac

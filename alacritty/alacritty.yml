@@ -1,0 +1,174 @@
+# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
+
+# Project:    Nord Alacritty
+# Version:    0.1.0
+# Repository: https://github.com/arcticicestudio/nord-alacritty
+# License:    MIT
+# References:
+#   https://github.com/alacritty/alacritty
+
+key_bindings:
+  - { key: J, mods: Command, chars: "\x01\x54" }
+  - { key: M, mods: Control, chars: "\x01m" } # switch to next tmux window
+  - { key: O, mods: Command, chars: "\x01o" } # open URLs 'joshmedeski/tmux-fzf-url'
+  - { key: P, mods: Command, chars: ":GoToFile\n" } # go to file
+  - { key: P, mods: Control, chars: ":GoToFile\n" } # go to file
+  - { key: I, mods: Control, chars: ":Telescope smart_goto\n" } # go to file
+  - { key: T, mods: Command, chars: "\x01T" } # create a new tmux window
+  - { key: S, mods: Command, chars: "\x1b\x3a\x77\x0a" } # save vim buffer
+  - { key: Q, mods: Command, chars: ":q\n" } # quit vim
+  - { key: N, mods: Command, chars: "\x01n" } # create a new tmux window
+  - { key: C, mods: Command, chars: "\x01c" } # create a new tmux window
+  - { key: Slash, mods: Command, chars: "\x01[/" } # tmux search
+  - { key: Down, mods: Command, chars: "\x01[/" } # tmux search
+  - { key: Semicolon, mods: Command, chars: "\x01n" } # create a new tmux window
+  - { key: Semicolon, mods: Control, chars: "\x01n" } # create a new tmux window
+  - { key: W, mods: Command, chars: "\x01x" } # kill the current pane
+  - { key: J, mods: Command, chars: "\x01\x54" } # open t - tmux smart session m anager
+  - { key: O, mods: Command, chars: "\x01u" } # open URLs 'joshmedeski/tmux-fzf-url'
+  - { key: G, mods: Command, chars: "\x01g" } # open git manager 'jesseduffield/lazygit'
+  - { key: Key1, mods: Control, chars: "\x011" } # open git manager 'jesseduffield/lazygit'
+  - { key: Key2, mods: Control, chars: "\x012" } # open git manager 'jesseduffield/lazygit'
+  - { key: Key3, mods: Control, chars: "\x013" } # open git manager 'jesseduffield/lazygit'
+  - { key: Key4, mods: Control, chars: "\x014" } # open git manager 'jesseduffield/lazygit'
+  - { key: Key5, mods: Control, chars: "\x015" } # open git manager 'jesseduffield/lazygit'
+  - { key: U, mods: Control, chars: "\x01-" } # open git manager 'jesseduffield/lazygit'
+  - { key: Y, mods: Control, chars: "\x01|" } # open git manager 'jesseduffield/lazygit'
+
+env:
+  TERM: xterm-256color
+
+live_config_reload: true
+
+window:
+  decorations: buttonless
+  dynamic_padding: false
+  # opacity: 0.8
+  # padding:
+  #   x: 14
+  #
+  #   y: 10
+
+#
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x1e2127'
+#     foreground: '0xabb2bf'
+#
+#     # Bright and dim foreground colors
+#     #
+#     # The dimmed foreground color is calculated automatically if it is not present.
+#     # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+#     # is `false`, the normal foreground color will be used.
+#     #dim_foreground: '0x9a9a9a'
+#     bright_foreground: '0xe6efff'
+#
+#   # Cursor colors
+#   #
+#   # Colors which should be used to draw the terminal cursor. If these are unset,
+#   # the cursor color will be the inverse of the cell color.
+#   #cursor:
+#   #  text: '0x000000'
+#   #  cursor: '0xffffff'
+#
+#   # Normal colors
+#   normal:
+#     black:   '0x1e2127'
+#     red:     '0xe06c75'
+#     green:   '0x98c379'
+#     yellow:  '0xd19a66'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0x828791'
+#
+#   # Bright colors
+#   bright:
+#     black:   '0x5c6370'
+#     red:     '0xe06c75'
+#     green:   '0x98c379'
+#     yellow:  '0xd19a66'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0xe6efff'
+#
+#   # Dim colors
+#   #
+#   # If the dim colors are not set, they will be calculated automatically based
+#   # on the `normal` colors.
+#   dim:
+#     black:   '0x1e2127'
+#     red:     '0xe06c75'
+#     green:   '0x98c379'
+#     yellow:  '0xd19a66'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0x828791'
+#
+font:
+  #family: JetBrains Mono
+  #family: JetBrainsMono Nerd Font
+  #normal:
+  #family: "JetBrainsMono Nerd Font"
+  #style: Medium
+  #italic:
+  #family: "JetBrainsMono Nerd Font"
+  #style: Medium Italic
+  #bold:
+  #family: "JetBrainsMono Nerd Font"
+  #style: Heavy
+  #bold_italic:
+  #family: "JetBrainsMono Nerd Font"
+  #style: Heavy Italic
+  ##size: 13
+
+  normal:
+    family: "JetBrainsMono Nerd Font"
+    style: Medium
+  italic:
+    family: "JetBrainsMono Nerd Font"
+    style: Medium Italic
+  bold:
+    family: "JetBrainsMono Nerd Font"
+    style: Heavy
+  bold_italic:
+    family: "JetBrainsMono Nerd Font"
+    style: Heavy Italic
+  size: 13
+
+# TokyoNight Alacritty Colors
+colors:
+  # Default colors
+  primary:
+    background: "0x1a1b26"
+    foreground: "0xc0caf5"
+
+  # Normal colors
+  normal:
+    black: "0x15161e"
+    red: "0xf7768e"
+    green: "0x9ece6a"
+    yellow: "0xe0af68"
+    blue: "0x7aa2f7"
+    magenta: "0xbb9af7"
+    cyan: "0x7dcfff"
+    white: "0xa9b1d6"
+
+  # Bright colors
+  bright:
+    black: "0x414868"
+    red: "0xf7768e"
+    green: "0x9ece6a"
+    yellow: "0xe0af68"
+    blue: "0x7aa2f7"
+    magenta: "0xbb9af7"
+    cyan: "0x7dcfff"
+    white: "0xc0caf5"
+
+  indexed_colors:
+    - { index: 16, color: "0xff9e64" }
+    - { index: 17, color: "0xdb4b4b" }

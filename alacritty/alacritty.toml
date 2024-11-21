@@ -1,0 +1,203 @@
+
+[[keyboard.bindings]]
+chars = "\u0001T"
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001m"
+key = "M"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0001o"
+key = "O"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = """
+:GoToFile
+"""
+key = "P"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = """
+:GoToFile
+"""
+key = "P"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = """
+:Telescope smart_goto
+"""
+key = "I"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0001T"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = """
+\u001B:w
+"""
+key = "S"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = """
+:q
+"""
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001n"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001c"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001[/"
+key = "Slash"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001[/"
+key = "Down"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001n"
+key = "Semicolon"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001n"
+key = "Semicolon"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0001x"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001T"
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001u"
+key = "O"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001g"
+key = "G"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00011"
+key = "Key1"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u00012"
+key = "Key2"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u00013"
+key = "Key3"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u00014"
+key = "Key4"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u00015"
+key = "Key5"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0001-"
+key = "U"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0001|"
+key = "Y"
+mods = "Control"
+
+[general]
+live_config_reload = true
+
+[[colors.indexed_colors]]
+color = "0xff9e64"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xdb4b4b"
+index = 17
+
+[colors.bright]
+black = "0x414868"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xc0caf5"
+yellow = "0xe0af68"
+
+[colors.normal]
+black = "0x15161e"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xa9b1d6"
+yellow = "0xe0af68"
+
+[colors.primary]
+background = "0x1a1b26"
+foreground = "0xc0caf5"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 13
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Heavy"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Heavy Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Medium Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Medium"
+
+[window]
+decorations = "buttonless"
+dynamic_padding = false
+
+[keyboard]

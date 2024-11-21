@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Check if both parameters are provided
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 <github_link> <directory_name>"
+    exit 1
+fi
+
+# Store parameters
+GITHUB_LINK=$1
+DIR_NAME=$2
+
+# Extract project name from GitHub link and append -main
+PROJECT_NAME="$(basename $GITHUB_LINK | sed 's/\.git$//')-main"
+
+# Create directory and navigate to it
+mkdir -p "$DIR_NAME"
+cd "$DIR_NAME" || exit 1
+
+# Clone the repository
+git clone "$GITHUB_LINK" "$PROJECT_NAME"
+
+# Check if git clone was successful
+if [ $? -ne 0 ]; then
+    echo "Failed to clone repository"
+    exit 1
+fi
+
+# Add to zoxide if it's installed
+if command -v zoxide &> /dev/null; then
+    zoxide add "$DIR_NAME/$PROJECT_NAME"
+    echo "Added to zoxide database: $DIR_NAME/$PROJECT_NAME"
+else
+    echo "Note: zoxide is not installed. Project path not added to zoxide database."
+fi
+
+# Connect with sesh
+if command -v sesh &> /dev/null; then
+    sesh connect "$PROJECT_NAME"
+else
+    echo "Note: sesh is not installed. Cannot connect to session."
+fi
+
+echo "Successfully set up project in $DIR_NAME/$PROJECT_NAME"
