@@ -102,9 +102,6 @@
       "lazygit"
       "sqlite"
       ];
-
-
-
     };
   in
   {
