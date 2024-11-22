@@ -78,8 +78,8 @@
         screensaver.askForPasswordDelay = 10;
         NSGlobalDomain.NSWindowShouldDragOnGesture = true;
         NSGlobalDomain._HIHideMenuBar = true;
-        NSGlobalDomain.InitialKeyRepeat = 10;
-        NSGlobalDomain.KeyRepeat = 1;
+        NSGlobalDomain.InitialKeyRepeat = 20;
+        NSGlobalDomain.KeyRepeat = 4;
       };
 
       
