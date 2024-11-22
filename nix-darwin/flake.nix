@@ -29,7 +29,7 @@
           pkgs.zoxide
           pkgs.wakatime
           pkgs.starship
-          pkgs.sketchybar
+          #pkgs.sketchybar
           pkgs.bat
           pkgs.fish
           pkgs.sesh
@@ -43,7 +43,7 @@
           pkgs.yq
         ];
       services.nix-daemon.enable = true;
-      services.sketchybar.enable = true;
+      #services.sketchybar.enable = true;
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -77,7 +77,7 @@
         screencapture.location = "~/screenshots";
         screensaver.askForPasswordDelay = 10;
         NSGlobalDomain.NSWindowShouldDragOnGesture = true;
-        NSGlobalDomain._HIHideMenuBar = true;
+        NSGlobalDomain._HIHideMenuBar = false;
         NSGlobalDomain.InitialKeyRepeat = 20;
         NSGlobalDomain.KeyRepeat = 4;
       };

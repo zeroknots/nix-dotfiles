@@ -25,6 +25,13 @@ set -Ux PAGER "less" # 'lucc/nvimpager'
 set -Ux VISUAL nvim
 set -Ux FONT "Hack Nerd Font"
 set SSH_AUTH_SOCK "~/.1password/agent.sock"
+set -x GITHUB_TOKEN "op://rhinestone/environment/github/password"
+set -x DEPLOYER_KEY "op://rhinestone/environment/deployerkey/password"
+set -x PRIVATE_KEY "op://rhinestone/environment/deployerkey/password"
+set -x API_KEY_ALCHEMY "op://rhinestone/environment/alchemy/password"
+set -x API_KEY_INFURA "op://rhinestone/environment/infura/password"
+set -x ETHERSCAN_KEY "op://rhinestone/environment/etherscan/password"
+set -x ETHERSCAN_API_KEY "op://rhinestone/environment/etherscan/password"
 
 #source ~/.config/fzf/shell/key-bindings.fish
 #source ~/.keys.sh
