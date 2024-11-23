@@ -1,0 +1,18 @@
+{ "msg_showcmd", "sl:1", "tick:277", false, { { 0, ":" } } }
+{ "cmdline_show", "sl:1", "tick:278", "mode:c", { { 0, "" } } }
+{ "cmdline_show", "sl:1", "tick:281", "mode:c", { { 0, "NoiceDebug" } } }
+{ "cmdline_show", "sl:1", "tick:283", "mode:c", { { 0, "Copilot auth" } } }
+{ "cmdline_hide", "sl:1", "tick:285", false, 1 }
+{ "msg_show", "sl:1", "tick:286", false, "lua_error" }
+{ "msg_showcmd", "sl:1", "tick:288", false, { { 0, "^M" } } }
+{ "msg_showcmd", "sl:1", "tick:290", false, { { 0, ":" } } }
+{ "cmdline_show", "sl:1", "tick:291", "mode:c", { { 0, "" } } }
+{ "cmdline_show", "sl:1", "tick:294", "mode:c", { { 0, "N" } } }
+{ "cmdline_show", "sl:1", "tick:296", "mode:c", { { 0, "No" } } }
+{ "cmdline_show", "sl:1", "tick:298", "mode:c", { { 0, "Noi" } } }
+{ "cmdline_show", "sl:1", "tick:300", "mode:c", { { 0, "Noice" } } }
+{ "cmdline_show", "sl:1", "tick:302", "mode:c", { { 0, "NoiceAll" } } }
+{ "cmdline_show", "sl:1", "tick:304", "mode:c", { { 0, "NoiceConfig" } } }
+{ "cmdline_show", "sl:1", "tick:306", "mode:c", { { 0, "NoiceDebug" } } }
+{ "cmdline_show", "sl:1", "tick:308", "mode:c", { { 0, "NoiceDisable" } } }
+{ "cmdline_hide", "sl:1", "tick:310", false, 1 }

@@ -101,6 +101,7 @@
       "ripgrep"
       "lazygit"
       "sqlite"
+      "lsd"
       ];
     };
   in

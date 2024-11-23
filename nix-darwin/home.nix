@@ -29,11 +29,11 @@
   };
 
   home.sessionVariables = {
-  SSH_AUTH_SOCK = "~/Library/Group\ Containers/2BA8C4S2C.com.1password/t/agent.sock";
+    SSH_AUTH_SOCK = "~/Library/Group\ Containers/2BA8C4S2C.com.1password/t/agent.sock";
   };
 
   home.sessionPath = [
-    "/run/current-system/sw/bin"
+      "/run/current-system/sw/bin"
       "$HOME/.nix-profile/bin"
   ];
   programs.home-manager.enable = true;

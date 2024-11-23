@@ -139,6 +139,8 @@ cmd-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 cmd-shift-semicolon = 'mode service'
 
+cmd-enter = "exec-and-forget open -a '/Applications/Alacritty.app'"
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -176,3 +178,5 @@ run = ['move-node-to-workspace 5']  # The callback itself
 [[on-window-detected]]
 if.app-id = 'com.1password.1password'
 run = 'layout floating'
+
+
