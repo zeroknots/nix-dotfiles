@@ -29,7 +29,6 @@
           pkgs.zoxide
           pkgs.wakatime
           pkgs.starship
-          #pkgs.sketchybar
           pkgs.bat
           pkgs.fish
           pkgs.sesh
@@ -96,12 +95,19 @@
         "the-unarchiver"
         "1password"
         "1password-cli"
+        "signal"
+        "loom"
       ];
       homebrew.brews = [
       "ripgrep"
       "lazygit"
       "sqlite"
       "lsd"
+      "solc-select"
+      "solhint"
+      "yarn"
+      "gh"
+      "cloc"
       ];
     };
   in

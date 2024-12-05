@@ -37,7 +37,7 @@ require("lazy").setup({
 	},
 	-- cSpell:word tokyonight habamax
 	install = { colorscheme = { "sonokai" } },
-	lockfile = "$HOME/dotfiles/neovim/lazy-lock.json",
+	lockfile = "/User/ops/dotfiles/lockfile/lazy-lock.json",
 
 	ui = {
 		border = "single",

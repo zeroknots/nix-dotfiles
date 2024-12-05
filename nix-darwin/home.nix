@@ -16,6 +16,7 @@
   # plain files is through 'home.file'.
   home.file = {
     ".config/nvim".source = ~/dotfiles/neovim;
+    ".config/gh-dash".source = ~/dotfiles/gh-dash;
     ".config/nix".source = ~/dotfiles/nix;
     ".config/nix-darwin".source = ~/dotfiles/nix-darwin;
     ".config/tmux".source = ~/dotfiles/tmux;
