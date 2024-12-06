@@ -63,6 +63,7 @@ repoPaths:
   rhinestonewtf/account-locker: ~/work/rhinestone/account-locker/account-locker-demo/
   rhinestonewtf/payments: ~/work/rhinestone/rs-payments/payments-main/
   rhinestonewtf/magic-passport: ~/work/rhinestone/magic-passport/
+  rhinestonewtf/deploy-rs: ~/work/rhinestone/deploy-rs/
 theme:
   ui:
     table:

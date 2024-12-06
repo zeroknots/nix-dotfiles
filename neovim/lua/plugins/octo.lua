@@ -27,5 +27,8 @@ return {
 		{ "<leader>o", "<cmd>Octo<cr>", desc = "Octo" },
 		{ "<leader>oi", "<cmd>Octo issue list<cr>", desc = "Octo list issues" },
 		{ "<leader>op", "<cmd>Octo pr list<cr>", desc = "Octo list PRs" },
+		{ "<leader>or", "<cmd>Octo review<cr>", desc = "Octo review" },
+		{ "<leader>oca", "<cmd>Octo comment add<cr>", desc = "Octo comment add" },
+		{ "<leader>ola", "<cmd>Octo label add<cr>", desc = "Octo label add" },
 	},
 }

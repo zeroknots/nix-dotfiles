@@ -84,6 +84,11 @@
       
       # Homebrew needs to be installed on its own!
       homebrew.enable = true;
+      #homebrew.onActivation = {
+        #autoUpdate = true;
+        #cleanup = "uninstall";
+        #upgrade = true;
+      #};
       homebrew.casks = [
         "google-chrome"
         "arc"
