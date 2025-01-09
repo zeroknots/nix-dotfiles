@@ -135,7 +135,7 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 #alt-shift-semicolon = 'mode service'
 
-cmd-enter = "exec-and-forget open -a '/Applications/Alacritty.app'"
+cmd-enter = "exec-and-forget open -a '/Applications/Ghostty.app'"
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

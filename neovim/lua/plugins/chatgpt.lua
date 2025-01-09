@@ -3,7 +3,7 @@ return {
 	cmd = "ChatGPT",
 	config = function()
 		require("chatgpt").setup({
-			api_key_cmd = "cat $HOME/.config/chatgpt.key",
+			api_key_cmd = "cat /Users/ops/.config/chatgpt.key",
 		})
 	end,
 	dependencies = {

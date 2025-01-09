@@ -16,6 +16,7 @@
   # plain files is through 'home.file'.
   home.file = {
     ".config/nvim".source = ~/dotfiles/neovim;
+    ".config/ghostty".source = ~/dotfiles/ghostty;
     ".config/gh-dash".source = ~/dotfiles/gh-dash;
     ".config/nix".source = ~/dotfiles/nix;
     ".config/nix-darwin".source = ~/dotfiles/nix-darwin;
@@ -27,6 +28,7 @@
     ".config/sketchybar".source = ~/dotfiles/sketchybar;
     ".config/bin".source = ~/dotfiles/bin;
     ".aerospace.toml".source = ~/dotfiles/aerospace/aerospace.toml;
+    ".config/superfile".source = ~/dotfiles/superfile;
   };
 
   home.sessionVariables = {

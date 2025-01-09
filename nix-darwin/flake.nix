@@ -35,6 +35,7 @@
           pkgs.nerdfonts
           pkgs.wget
           pkgs.nodejs_23
+          pkgs.tmux
           pkgs.pnpm
           pkgs.gcc
           pkgs.cmake
@@ -58,6 +59,8 @@
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.keyboard.enableKeyMapping = true;
       system.keyboard.remapCapsLockToControl = true;
+      security.pam.enableSudoTouchIdAuth = true;
+
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
       system.stateVersion = 5;
@@ -84,11 +87,11 @@
       
       # Homebrew needs to be installed on its own!
       homebrew.enable = true;
-      #homebrew.onActivation = {
-        #autoUpdate = true;
-        #cleanup = "uninstall";
-        #upgrade = true;
-      #};
+      homebrew.onActivation = {
+        autoUpdate = true;
+        cleanup = "uninstall";
+        upgrade = true;
+      };
       homebrew.casks = [
         "google-chrome"
         "arc"
@@ -102,8 +105,12 @@
         "1password-cli"
         "signal"
         "loom"
+        "pocket-casts"
+        "transmission"
+        "ghostty"
       ];
       homebrew.brews = [
+      "tmux"
       "ripgrep"
       "lazygit"
       "sqlite"
@@ -113,6 +120,7 @@
       "yarn"
       "gh"
       "cloc"
+      "superfile"
       ];
     };
   in

@@ -64,6 +64,8 @@ repoPaths:
   rhinestonewtf/payments: ~/work/rhinestone/rs-payments/payments-main/
   rhinestonewtf/magic-passport: ~/work/rhinestone/magic-passport/
   rhinestonewtf/deploy-rs: ~/work/rhinestone/deploy-rs/
+  rhinestonewtf/demo-spokepool: ~/work/rhinestone/demo-spokepool/
+  rhinestonewtf/orchestrator-rs: ~/work/rhinestone/orchestrator-rs/
 theme:
   ui:
     table:
