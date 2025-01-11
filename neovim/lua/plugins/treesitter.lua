@@ -3,10 +3,13 @@ return {
 	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
+		-- "RRethy/nvim-treesitter-textsubjects",
+
 		"nvim-treesitter/playground",
 	},
 	opts = {
 		enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+		highlight = true,
 		max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
 		min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
 		line_numbers = false,
@@ -18,6 +21,30 @@ return {
 		separator = nil,
 		zindex = 20, -- The Z-index of the context window
 		on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+		indent = {
+			enable = true,
+			disable = {},
+		},
+		textobjects = {
+			select = {
+				enable = true,
+				lookahead = true,
+				keymaps = {
+					["af"] = "@function.outer",
+					["if"] = "@function.inner",
+					["ac"] = "@class.outer",
+					["ic"] = "@class.inner",
+				},
+			},
+			move = {
+				enable = true,
+				set_jumps = true,
+				goto_next_start = { ["]f"] = "@keyword.function.outer" },
+				goto_next_end = { ["]F"] = "@keyword.function.outer" },
+				goto_previous_start = { ["[f"] = "@keyword.function.outer" },
+				goto_previous_end = { ["[F"] = "@keyword.function.outer" },
+			},
+		},
 	},
 	keys = {
 		{ "[c", "<cmd>lua require('treesitter-context').go_to_context()<cr>", desc = "Attach to the nearest test" },
