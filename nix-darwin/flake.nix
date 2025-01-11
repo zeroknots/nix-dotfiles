@@ -107,6 +107,7 @@
         "loom"
         "pocket-casts"
         "transmission"
+        "obsidian"
         "ghostty"
       ];
       homebrew.brews = [
@@ -121,6 +122,7 @@
       "gh"
       "cloc"
       "superfile"
+      "macmon"
       ];
     };
   in

@@ -40,7 +40,7 @@ return {
 
 		return {
 			options = {
-				theme = "sonokai",
+				theme = "catppuccin",
 				globalstatus = true,
 				component_separators = { left = "", right = "" },
 				disabled_filetypes = { statusline = { "dashboard", "lazy", "alpha" } },

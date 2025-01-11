@@ -19,7 +19,7 @@ set -U fish_key_bindings fish_vi_key_bindings
 fish_vi_key_bindings
 
 set -Ux BAT_THEME  "base16"
-set -Ux EDITOR nvim # 'neovim/neovim' text editor
+set -x EDITOR nvim # 'neovim/neovim' text editor
 set -Ux FZF_DEFAULT_COMMAND "fd -H -E '.git'"
 set -Ux PAGER "less" # 'lucc/nvimpager'
 set -Ux VISUAL nvim

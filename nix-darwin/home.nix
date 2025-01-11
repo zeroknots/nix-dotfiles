@@ -24,6 +24,7 @@
     ".tmux".source = ~/dotfiles/tmux-plugins;
     ".config/alacritty".source = ~/dotfiles/alacritty;
     ".config/fish".source = ~/dotfiles/fish;
+    ".config/sesh".source = ~/dotfiles/sesh;
     ".config/starship.toml".source = ~/dotfiles/starship.toml;
     ".config/sketchybar".source = ~/dotfiles/sketchybar;
     ".config/bin".source = ~/dotfiles/bin;
