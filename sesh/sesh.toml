@@ -11,25 +11,25 @@ script_path = "~/dotfiles/sesh/scripts/solidity_dev"
 
 [[session]]
 name = "💻 Core Modules"
-path = "~/work/rhinestone/account-locker/core-modules/"
+path = "~/work/rhinestone/core-modules/"
 script_path = "~/dotfiles/sesh/scripts/solidity_dev"
 
 
 [[session]]
 name = "💻 ModuleKit"
-path = "~/work/rhinestone/account-locker/modulekit/"
+path = "~/work/rhinestone/modulekit/"
 script_path = "~/dotfiles/sesh/scripts/solidity_dev"
 
 
 [[session]]
 name = "💻 Safe7579"
-path = "~/work/rhinestone/account-locker/safe7579/"
+path = "~/work/rhinestone/safe7579/"
 script_path = "~/dotfiles/sesh/scripts/solidity_dev"
 
 
 [[session]]
 name = "🦀 Deploy rs"
-path = "~/work/rhinestone/account-locker/core-modules/"
+path = "~/work/rhinestone/core-modules/"
 script_path = "~/dotfiles/sesh/scripts/solidity_dev"
 
 [[session]]
