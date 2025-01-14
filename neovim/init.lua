@@ -3,6 +3,8 @@ require("core.lazy")
 require("core.autostart")
 require("core.keymaps")
 require("core.colorscheme")
+vim.cmd("source ~/.config/nvim/lua/core/snippy.vim")
+
 -- require("core.lsp")
 -- require("plugins.comment")
 -- require("plugins.treesitter")

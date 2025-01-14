@@ -1,14 +1,40 @@
 # comment
-snippet cons console2.log()
-console2.log($1)
+snippet log console2.log()
+  console2.log("$1", $2);
 
-snippet consImport console2.log()
-import "forge-std/console2.sol";
+snippet console2 console2.log()
+  console2.log("$1", $2);
+
+
+snippet import* imports
+  import { $1} from "$2";
+
+snippet importLog console2.log()
+  import { console2 } from "forge-std/console2.sol";
+
+snippet importERC20 console2.log()
+  import { IERC20 } from "forge-std/interfaces/IERC20.sol";
+
+snippet pragma solidity pragma
+  // SPDX-License-Identifier: MIT
+  pragma solidity ^0.8.23;
+
+snippet contract solidity contract
+  contract $1 {
+    $2
+  }
+
+
+snippet contractInherit solidity contract
+  contract $1 is $2 {
+    $3
+  }
+
 
 
 snippet for for-gasbad
-for (uint256 i; i < ${1:10}; i++) {
-	$2
-}
+  for (uint256 i; i < ${1:10}; i++) {
+	  $2
+  }
 
 

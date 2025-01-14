@@ -38,28 +38,33 @@ path = "~/notes"
 startup_command = "nvim +ObsidianToday"
 
 [[session]]
-name = "nvim config"
+name = "🤖nvim"
 path = "~/dotfiles/neovim"
 
 
 [[session]]
-name = "sesh config"
+name = "🤖sesh"
 path = "~/dotfiles/sesh"
 startup_command = "nvim sesh.toml"
 
+[[session]]
+name = "🤖nix"
+path = "~/dotfiles/nix-darwin"
+startup_command = "nvim flake.nix"
+
 
 [[session]]
-name = "aerospace config"
+name = "🤖aerospace"
 path = "~/dotfiles/aerospace/"
 startup_command = "nvim aerospace.toml"
 
 [[session]]
-name = "ghostty config"
+name = "🤖ghostty"
 path = "~/dotfiles/ghostty/"
 startup_command = "nvim config"
 
 [[session]]
-name = "tmux config"
+name = "🤖tmux"
 path = "~/dotfiles/tmux"
 startup_command = "nvim tmux.conf"
 

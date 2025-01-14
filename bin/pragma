@@ -1,0 +1,36 @@
+#!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <directory> <version>"
+    echo "Example: $0 ./src 0.8.28"
+    exit 1
+fi
+
+directory="$1"
+version="$2"
+
+# Validate version format
+if ! [[ $version =~ ^0\.8\.[0-9]+$ ]]; then
+    echo "Error: Version must be in format 0.8.xx"
+    exit 1
+fi
+
+# Find all .sol files in the directory and subdirectories
+find "$directory" -type f -name "*.sol" | while read -r file; do
+    echo "Processing: $file"
+    
+    # Check if file already has a pragma statement
+    if grep -q "^pragma solidity" "$file"; then
+        # Replace existing pragma statement
+        sed -i '' "s/pragma solidity .*$/pragma solidity ^$version;/" "$file"
+
+    else
+        # Add pragma statement at the beginning of the file
+        temp_file=$(mktemp)
+        echo "pragma solidity ^$version;" > "$temp_file"
+        cat "$file" >> "$temp_file"
+        mv "$temp_file" "$file"
+    fi
+done
+
+echo "Completed updating pragma versions"

@@ -5,6 +5,7 @@ return {
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
 		"L3MON4D3/LuaSnip", -- snippet engine
+		"dcampos/nvim-snippy",
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
@@ -16,10 +17,23 @@ return {
 
 		local lspkind = require("lspkind")
 
+		local snippy = require("snippy")
+		snippy.setup({
+			mappings = {
+				is = {
+					["<Tab>"] = "expand_or_advance",
+					["<S-Tab>"] = "previous",
+				},
+				nx = {
+					["<leader>x"] = "cut_text",
+				},
+			},
+		})
+
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
 		require("luasnip.loaders.from_snipmate").lazy_load({ paths = {
-			"./sippets",
+			"./snippets",
 		} })
 
 		cmp.setup({
@@ -28,7 +42,8 @@ return {
 			},
 			snippet = { -- configure how nvim-cmp interacts with snippet engine
 				expand = function(args)
-					luasnip.lsp_expand(args.body)
+					-- luasnip.lsp_expand(args.body)
+					require("snippy").expand_snippet(args.body)
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
