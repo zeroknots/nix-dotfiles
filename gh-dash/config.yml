@@ -61,6 +61,7 @@ keybindings:
 repoPaths:
   erc7579/smartsessions: ~/work/rhinestone/smartsession/smartsessions-main/
   rhinestonewtf/account-locker: ~/work/rhinestone/account-locker/account-locker-demo/
+  rhinestonewtf/compact-locker: ~/work/rhinestone/account-locker/compact-locker/
   rhinestonewtf/payments: ~/work/rhinestone/rs-payments/payments-main/
   rhinestonewtf/magic-passport: ~/work/rhinestone/magic-passport/
   rhinestonewtf/deploy-rs: ~/work/rhinestone/deploy-rs/

@@ -52,6 +52,11 @@ name = "🤖nix"
 path = "~/dotfiles/nix-darwin"
 startup_command = "nvim flake.nix"
 
+[[session]]
+name = "🤖gh-dash"
+path = "~/dotfiles/gh-dash"
+startup_command = "nvim config.yml"
+
 
 [[session]]
 name = "🤖aerospace"

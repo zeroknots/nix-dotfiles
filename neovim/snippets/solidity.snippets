@@ -1,40 +1,66 @@
 # comment
-snippet log console2.log()
+snippet ;log console2.log()
   console2.log("$1", $2);
 
-snippet console2 console2.log()
+snippet ;console2 console2.log()
   console2.log("$1", $2);
 
 
-snippet import* imports
+snippet ;uint[2][] uint[2][]
+	uint256[2][] $1 $2
+
+snippet ;uint[2][]calldata uint[2][]
+	uint256[2][] calldata $1
+
+snippet ;uint[2][]memory uint[2][]
+	uint256[2][] memory $1
+
+snippet ;import* imports
   import { $1} from "$2";
 
-snippet importLog console2.log()
+snippet ;importConsoleLog2 console2.log()
   import { console2 } from "forge-std/console2.sol";
 
-snippet importERC20 console2.log()
+snippet ;importERC20 import IERC20
   import { IERC20 } from "forge-std/interfaces/IERC20.sol";
 
-snippet pragma solidity pragma
+snippet ;pragma pragma
   // SPDX-License-Identifier: MIT
   pragma solidity ^0.8.23;
 
-snippet contract solidity contract
+snippet ;contract  contract
   contract $1 {
     $2
   }
 
 
-snippet contractInherit solidity contract
+snippet ;functionInternalReturn  internal function with return
+  function $1($2) $3 returns($4) {
+    $4
+  }
+
+snippet ;functionInternal internal function no return
+  function $1($2) $3 {
+    $4
+  }
+
+snippet ;contractInherit solidity contract
   contract $1 is $2 {
     $3
   }
 
-
-
-snippet for for-gasbad
+snippet ;for for-gasbad
   for (uint256 i; i < ${1:10}; i++) {
 	  $2
   }
 
+snippet ;test foundry test template
+	import {Test} from "forge-std/Test.sol";
+	contract $1 is Test {
+
+		function setUp() public {}
+
+		function test_$2() public {}
+
+	}
 

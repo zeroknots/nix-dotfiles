@@ -42,7 +42,9 @@ return {
 					["@string.special.path"] = { fg = colors.lavender },
 					["@punctuation.bracket"] = { fg = colors.subtext1 },
 					["@keyword.exception"] = { fg = colors.flamingo, style = { "bold" } },
-					--
+					-- rust
+					["rustAttribute"] = { fg = colors.orange },
+					["rustFoldBraces"] = { fg = colors.orange },
 				}
 			end,
 			integrations = {
