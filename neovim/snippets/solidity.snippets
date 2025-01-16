@@ -2,9 +2,39 @@
 snippet ;log console2.log()
   console2.log("$1", $2);
 
+snippet ;tilde ~
+	~
+snippet ;backtick `
+	`
+snippet ;backticks ```
+	```
+snippet ;struct add struct
+	struct $1 {
+		$2;
+	}
+
+snippet ;inheritdoc inheritdoc
+	/**
+   * @inheritdoc $1
+   */
+
+
+snippet ;blockComment pretty block comment
+	/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+	/*                       $1                   */
+	/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+snippet ;doc doc
+	/**
+   * @notice: $1
+	 * @dev: $2
+	 * @param $3
+	 * @param $4
+	 * @return $5
+   */
+
 snippet ;console2 console2.log()
   console2.log("$1", $2);
-
 
 snippet ;uint[2][] uint[2][]
 	uint256[2][] $1 $2
