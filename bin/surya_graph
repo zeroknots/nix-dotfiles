@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <directory> <file>"
+    echo "Example: $0 src file.png"
+    exit 1
+fi
+
+directory="$1"
+file="$2"
+

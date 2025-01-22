@@ -7,3 +7,5 @@ alias ft "forge test"
 alias fb "forge build"
 alias ftmt "forge test --mt"
 alias ripgrep "rg"
+
+alias gwa "git worktree add"

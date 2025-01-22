@@ -28,13 +28,19 @@ script_path = "~/dotfiles/sesh/scripts/solidity_dev"
 
 
 [[session]]
+name = "💻 SpokePool"
+path = "~/work/rhinestone/across-spokepool/main/"
+script_path = "~/dotfiles/sesh/scripts/solidity_dev"
+
+
+[[session]]
 name = "🦀 Deploy rs"
 path = "~/work/rhinestone/core-modules/"
 script_path = "~/dotfiles/sesh/scripts/solidity_dev"
 
 [[session]]
 name = "notes 🧠"
-path = "~/notes"
+path = "/Users/ops/Library/Mobile Documents/iCloud~md~obsidian/Documents/My Vault"
 startup_command = "nvim +ObsidianToday"
 
 [[session]]

@@ -123,6 +123,10 @@
       "cloc"
       "superfile"
       "macmon"
+      "tree-sitter"
+      "graphviz"
+      "babel"
+      "tree"
       ];
     };
   in

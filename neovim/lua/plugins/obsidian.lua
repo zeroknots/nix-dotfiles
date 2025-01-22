@@ -26,7 +26,7 @@ return {
 	},
 
 	opts = {
-		dir = "~/notes", -- no need to call 'vim.fn.expand' here
+		dir = "/Users/ops/Library/Mobile Documents/iCloud~md~obsidian/Documents/My Vault", -- no need to call 'vim.fn.expand' here
 		completion = { nvim_cmp = true },
 		{
 

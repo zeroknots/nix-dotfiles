@@ -28,8 +28,10 @@ set SSH_AUTH_SOCK "~/.1password/agent.sock"
 #set -x GITHUB_TOKEN "op://rhinestone/environment/github/password"
 #set -x DEPLOYER_KEY "op://rhinestone/environment/deployerkey/password"
 #set -x PRIVATE_KEY "op://rhinestone/environment/deployerkey/password"
-set -x API_KEY_ALCHEMY "op://rhinestone/environment/alchemy/password"
-set -x API_KEY_INFURA "op://rhinestone/environment/infura/password"
+# Source sensitive environment variables from separate file
+if test -e ~/.env/env.fish
+    source ~/.env/env.fish
+end
 #set -x ETHERSCAN_KEY "op://rhinestone/environment/etherscan/password"
 #set -x ETHERSCAN_API_KEY "op://rhinestone/environment/etherscan/password"
 set -x LIBRARY_PATH "/nix/store/w99j5fqpc8dz0m732b40pk6kfdq4gsh1-libiconv-99/lib"

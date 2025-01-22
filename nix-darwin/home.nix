@@ -15,7 +15,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/nvim".source = ~/dotfiles/neovim;
+    #".config/nvim".source = ~/dotfiles/neovim;
     ".config/ghostty".source = ~/dotfiles/ghostty;
     ".config/gh-dash".source = ~/dotfiles/gh-dash;
     ".config/nix".source = ~/dotfiles/nix;
