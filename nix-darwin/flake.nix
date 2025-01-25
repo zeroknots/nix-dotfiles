@@ -127,6 +127,7 @@
       "graphviz"
       "babel"
       "tree"
+      "gum"
       ];
     };
   in

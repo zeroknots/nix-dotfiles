@@ -12,16 +12,19 @@ return {
 	-- Yellow/Green colors
 	yellow = "#edc763", -- Sonokai yellow
 	green = "#9ed06c", -- Sonokai green
+	lime = "#b5e08c", -- New: Brighter green variant
 
 	-- Blue colors
 	teal = "#6dcae8", -- Sonokai blue
 	sky = "#77d5f0", -- Sonokai bg_blue
 	sapphire = "#58c7e7", -- New: Darker variant of Sonokai blue
 	blue = "#6dcae8", -- Sonokai blue
-	lavender = "#bb97ee", -- Sonokai purple
+	navy = "#3a8fb7", -- New: Darker blue for contrast
+	lavender = "#c8a8ff", -- New: More distinct lavender
 
 	-- Monochrome/text colors
 	text = "#e1e3e4", -- Sonokai fg
+	white = "#ffffff", -- New: Pure white for maximum contrast
 	subtext1 = "#7e8294", -- Sonokai grey
 	subtext0 = "#6d7183", -- New: Slightly darker grey
 	overlay2 = "#7e8294", -- Sonokai grey
