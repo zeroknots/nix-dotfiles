@@ -6,6 +6,9 @@ return {
 		version = "*",
 		dependencies = {
 			{
+				"giuxtaposition/blink-cmp-copilot",
+			},
+			{
 				"saghen/blink.compat",
 				event = { "InsertEnter", "CmdlineEnter" },
 				opts = {},
@@ -55,7 +58,7 @@ return {
 					--})
 
 					require("luasnip.loaders.from_lua").load({
-						paths = { "/Users/ops/.config/nvim/snippets" },
+						paths = { vim.fn.stdpath("config") .. "/lua/snippets" },
 					})
 					require("luasnip.loaders.from_vscode").lazy_load()
 				end,
@@ -64,6 +67,7 @@ return {
 			-- "zbirenbaum/copilot.lua",
 			-- "zbirenbaum/copilot-cmp",
 		},
+
 		opts = function(_, opts)
 			opts.appearance = {
 				-- sets the fallback highlight groups to nvim-cmp's highlight groups
@@ -73,6 +77,10 @@ return {
 				-- set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
 				-- adjusts spacing to ensure icons are aligned
 				nerd_font_variant = "mono",
+			}
+
+			opts.signature = {
+				enabled = true,
 			}
 
 			opts.snippets = {
@@ -95,12 +103,41 @@ return {
 			}
 
 			opts.completion = {
+				-- list.selection = {preselect = true, auto_insert = false},
 				accept = {
 					-- experimental auto-brackets support
 					auto_brackets = {
 						enabled = true,
 					},
 				},
+				list = {
+					-- Maximum number of items to display
+					max_items = 200,
+
+					selection = {
+						-- When `true`, will automatically select the first item in the completion list
+						--preselect = false,
+						preselect = function(ctx)
+							return ctx.mode ~= "cmdline"
+						end,
+
+						-- When `true`, inserts the completion item automatically when selecting it
+						-- You may want to bind a key to the `cancel` command (default <C-e>) when using this option,
+						-- which will both undo the selection and hide the completion menu
+						auto_insert = false,
+						-- auto_insert = function(ctx) return ctx.mode ~= 'cmdline' end
+					},
+
+					cycle = {
+						-- When `true`, calling `select_next` at the *bottom* of the completion list
+						-- will select the *first* completion item.
+						from_bottom = true,
+						-- When `true`, calling `select_prev` at the *top* of the completion list
+						-- will select the *last* completion item.
+						from_top = true,
+					},
+				},
+
 				menu = {
 					border = "rounded",
 					draw = {
@@ -140,13 +177,14 @@ return {
 						winblend = 0,
 					},
 					auto_show = true,
-					auto_show_delay_ms = 100,
+					auto_show_delay_ms = 200,
 				},
 				ghost_text = {
 					enabled = vim.g.ai_cmp,
 				},
 			}
 
+			-- opts.completion.list.selection = { preselect = true, auto_insert = false }
 			opts.sources = vim.tbl_deep_extend("force", opts.sources or {}, {
 				default = { "lsp", "path", "snippets", "buffer" },
 				providers = {
@@ -176,9 +214,9 @@ return {
 					buffer = {
 						name = "Buffer",
 						enabled = true,
-						max_items = 2,
+						max_items = 4,
 						module = "blink.cmp.sources.buffer",
-						min_keyword_length = 2,
+						min_keyword_length = 2, -- setting this to 3 cause blink popping up at :w drives me nuts
 					},
 					snippets = {
 						name = "snippets",
@@ -186,7 +224,7 @@ return {
 						max_items = 8,
 						min_keyword_length = 2,
 						-- module = "blink.cmp.sources.snippets",
-						score_offset = 100,
+						score_offset = 80,
 					},
 					lazydev = {
 						name = "LazyDev",
@@ -210,10 +248,14 @@ return {
 
 			opts.keymap = {
 				preset = "default",
-				["<C-space>"] = { "select_and_accept" },
 
-				["<C-l>"] = { "snippet_forward", "fallback" },
-				["<C-h>"] = { "snippet_backward", "fallback" },
+				-- ["<CR>"] = { "select_and_accept", "fallback" },
+				["<C-l>"] = { "select_and_accept", "fallback" },
+				["<C-space>"] = { "select_and_accept", "fallback" },
+				["<CR>"] = { "accept", "fallback" },
+
+				--["<C-l>"] = { "snippet_forward", "fallback" },
+				--["<C-h>"] = { "snippet_backward", "fallback" },
 
 				["<C-k>"] = { "select_prev", "fallback" },
 				["<C-j>"] = { "select_next", "fallback" },
@@ -226,8 +268,8 @@ return {
 
 				["<C-s>"] = { "show", "show_documentation", "hide_documentation" },
 				["<C-e>"] = { "hide", "fallback" },
-				-- ["<Tab>"] = {},
-				-- ["<S-Tab>"] = {},
+				["<Tab>"] = {},
+				["<S-Tab>"] = {},
 			}
 
 			return opts
