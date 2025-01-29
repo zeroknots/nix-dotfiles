@@ -49,3 +49,4 @@ fish_add_path $HOME/.cargo/bin
 
 export PATH="$PATH:/Users/ops/.foundry/bin"
 export PATH="$PATH:/Users/ops/.local/share/nvim/mason/bin"
+export PATH="$PATH:/Users/ops/.local/bin"

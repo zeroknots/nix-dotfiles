@@ -6,6 +6,10 @@ return {
 	opts = {
 		-- add any opts here
 		provider = "deepseek",
+		auto_suggestions_provider = "deepseek",
+		behaviour = {
+			auto_suggestions = true, -- Experimental stage
+		},
 		vendors = {
 			deepseek = {
 				__inherited_from = "openai",

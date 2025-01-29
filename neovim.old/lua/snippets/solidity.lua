@@ -1,4 +1,3 @@
-
 local ls = require("luasnip")
 local s = ls.snippet
 local t = ls.text_node
@@ -135,3 +134,26 @@ return {
 		i(1),
 		t(" is "),
 		i(2),
+		t(" {"),
+		t({ "", "\t" }),
+		i(3),
+		t({ "", "}" }),
+	}),
+
+	s(";for", {
+		t("for (uint256 i; i < "),
+		i(1, "10"),
+		t("; i++) {"),
+		t({ "", "\t" }),
+		i(2),
+		t({ "", "}" }),
+	}),
+
+	s(";test", {
+		t({ 'import {Test} from "forge-std/Test.sol";', "contract " }),
+		i(1),
+		t(" is Test {", { "", "", "\tfunction setUp() public {}", "", "\tfunction test_" }),
+		i(2),
+		t("() public {}", { "", "}" }),
+	}),
+}

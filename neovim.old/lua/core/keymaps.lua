@@ -25,7 +25,7 @@ keymap.set("n", "<leader>-", "<C-w>s")
 keymap.set("n", "<leader>se", "<C-w>=")
 keymap.set("n", "<leader>sx", ":close<CR>")
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
-keymap.set("n", "<leader>ss", ":lua require('spectre').open()<CR>")
+--keymap.set("n", "<leader>ss", ":lua require('spectre').open()<CR>")
 keymap.set("n", "<leader>sw", ":lua require('spectre').open_visual({select_word=true})<CR>")
 
 -- jumps
@@ -75,13 +75,20 @@ keymap.set("n", "<leader>ts", ":TSEnable highlight<CR>")
 -- folds
 keymap.set("n", "<leader>z", "za")
 
-local map = keymap.set
+local ls = require("luasnip")
 
-map({ "i", "s" }, "<tab>", function()
-	return require("snippy").can_expand_or_advance() and "<plug>(snippy-expand-or-advance)" or "<tab>"
-end, { expr = true })
-map({ "i", "s" }, "<s-tab>", function()
-	return require("snippy").can_jump(-1) and "<plug>(snippy-previous)" or "<s-tab>"
-end, { expr = true })
-map("x", "<Tab>", "<plug>(snippy-cut-text)")
-map("n", "g<Tab>", "<plug>(snippy-cut-text)")
+keymap.set({ "i" }, "<C-K>", function()
+	ls.expand()
+end, { silent = true })
+keymap.set({ "i", "s" }, "<C-n>", function()
+	ls.jump(1)
+end, { silent = true })
+keymap.set({ "i", "s" }, "<C-b>", function()
+	ls.jump(-1)
+end, { silent = true })
+
+keymap.set({ "i", "s" }, "<C-E>", function()
+	if ls.choice_active() then
+		ls.change_choice(1)
+	end
+end, { silent = true })

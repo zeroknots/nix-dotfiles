@@ -69,6 +69,10 @@ return {
 		},
 
 		opts = function(_, opts)
+			require("cmp").ConfirmBehavior = {
+				Insert = "insert",
+				Replace = "replace",
+			}
 			opts.appearance = {
 				-- sets the fallback highlight groups to nvim-cmp's highlight groups
 				-- useful for when your theme doesn't support blink.cmp
@@ -175,6 +179,7 @@ return {
 					window = {
 						border = "rounded",
 						winblend = 0,
+						max_width = 100,
 					},
 					auto_show = true,
 					auto_show_delay_ms = 200,
@@ -186,22 +191,51 @@ return {
 
 			-- opts.completion.list.selection = { preselect = true, auto_insert = false }
 			opts.sources = vim.tbl_deep_extend("force", opts.sources or {}, {
-				default = { "lsp", "path", "snippets", "buffer" },
+				default = {
+					"lsp",
+					"path",
+					"snippets",
+					"buffer",
+					"copilot",
+					"avante_commands",
+					"avante_mentions",
+					"avante_files",
+				},
 				providers = {
+					copilot = {
+						name = "copilot",
+						module = "blink-cmp-copilot",
+						score_offset = 100,
+						async = true,
+						transform_items = function(_, items)
+							local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
+							local kind_idx = #CompletionItemKind + 1
+							CompletionItemKind[kind_idx] = "Copilot"
+							for _, item in ipairs(items) do
+								item.kind = kind_idx
+							end
+							return items
+						end,
+					},
 					lsp = {
 						name = "lsp",
 						enabled = true,
 						module = "blink.cmp.sources.lsp",
 						score_offset = 90, -- the higher the number, the higher the priority
 					},
+					lazydev = {
+						name = "LazyDev",
+						module = "lazydev.integrations.blink",
+						score_offset = 100, -- show at a higher priority than lsp
+					},
 					path = {
 						name = "Path",
 						module = "blink.cmp.sources.path",
-						score_offset = 3,
+						score_offset = 20,
 						-- When typing a path, I would get snippets and text in the
 						-- suggestions, I want those to show only if there are no path
 						-- suggestions
-						fallbacks = { "snippets", "buffer" },
+						fallbacks = { "buffer" },
 						opts = {
 							trailing_slash = false,
 							label_trailing_slash = true,
@@ -217,19 +251,33 @@ return {
 						max_items = 4,
 						module = "blink.cmp.sources.buffer",
 						min_keyword_length = 2, -- setting this to 3 cause blink popping up at :w drives me nuts
+						score_offset = 20,
 					},
 					snippets = {
 						name = "snippets",
 						enabled = true,
 						max_items = 8,
-						min_keyword_length = 2,
+						min_keyword_length = 1,
 						-- module = "blink.cmp.sources.snippets",
-						score_offset = 80,
+						score_offset = 5,
 					},
-					lazydev = {
-						name = "LazyDev",
-						module = "lazydev.integrations.blink",
+					avante_commands = {
+						name = "avante_commands",
+						module = "blink.compat.source",
+						score_offset = 90, -- show at a higher priority than lsp
+						opts = {},
+					},
+					avante_files = {
+						name = "avante_commands",
+						module = "blink.compat.source",
 						score_offset = 100, -- show at a higher priority than lsp
+						opts = {},
+					},
+					avante_mentions = {
+						name = "avante_mentions",
+						module = "blink.compat.source",
+						score_offset = 100, -- show at a higher priority than lsp
+						opts = {},
 					},
 				},
 				-- command line completion, thanks to dpetka2001 in reddit
