@@ -32,7 +32,8 @@
           pkgs.bat
           pkgs.fish
           pkgs.sesh
-          pkgs.nerdfonts
+          pkgs.nerd-fonts.jetbrains-mono
+          pkgs.nerd-fonts.hack
           pkgs.wget
           pkgs.nodejs_23
           pkgs.tmux
@@ -49,9 +50,9 @@
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
-      fonts.packages = [
-        (pkgs.nerdfonts.override { fonts = ["JetBrainsMono" "Hack"];})
-      ];
+      # fonts.packages = [
+      #   (pkgs.nerdfonts.override { fonts = ["JetBrainsMono" "Hack"];})
+      # ];
 
       # Enable alternative shell support in nix-darwin.
       programs.fish.enable = true;
