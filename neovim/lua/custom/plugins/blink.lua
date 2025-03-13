@@ -3,7 +3,6 @@ return {
     'saghen/blink.cmp',
     enabled = true,
     event = { 'InsertEnter', 'CmdlineEnter' },
-    version = '*',
     dependencies = {
       {
         'giuxtaposition/blink-cmp-copilot',
@@ -58,8 +57,10 @@ return {
           --})
 
           require('luasnip.loaders.from_lua').load {
-            paths = { vim.fn.stdpath 'config' .. '/lua/snippets' },
+            paths = { vim.fn.stdpath 'config' .. '/lua/snippets/' },
           }
+          -- Reload snippets
+          -- require('luasnip').refresh_snippets()
           require('luasnip.loaders.from_vscode').lazy_load()
         end,
       },
@@ -81,7 +82,7 @@ return {
       }
 
       opts.signature = {
-        enabled = true,
+        enabled = false,
       }
 
       opts.snippets = {
@@ -105,10 +106,12 @@ return {
 
       opts.completion = {
         -- list.selection = {preselect = true, auto_insert = false},
+        -- insert_behavior = 'insert', -- 'insert' will only insert the base completion without parameters
         accept = {
+          dot_repeat = true,
           -- experimental auto-brackets support
           auto_brackets = {
-            enabled = true,
+            enabled = false,
           },
         },
         list = {
@@ -125,7 +128,7 @@ return {
             -- When `true`, inserts the completion item automatically when selecting it
             -- You may want to bind a key to the `cancel` command (default <C-e>) when using this option,
             -- which will both undo the selection and hide the completion menu
-            auto_insert = false,
+            auto_insert = true,
             -- auto_insert = function(ctx) return ctx.mode ~= 'cmdline' end
           },
 
@@ -152,18 +155,6 @@ return {
               source_name = {
                 text = function(ctx)
                   return '[' .. ctx.source_name .. ']'
-                end,
-              },
-              kind_icon = {
-                text = function(ctx)
-                  if require('blink.cmp.completion.windows.render.tailwind').get_hex_color(ctx.item) then
-                    return '󱓻'
-                  end
-                  local client = vim.lsp.get_client_by_id(ctx.item.client_id)
-                  if client and client.name == 'tailwindcss' then
-                    return '󱏿'
-                  end
-                  return ctx.kind_icon .. ctx.icon_gap
                 end,
               },
             },
@@ -275,18 +266,19 @@ return {
             opts = {},
           },
         },
+        -- cmdline = {},
         -- command line completion, thanks to dpetka2001 in reddit
         -- https://www.reddit.com/r/neovim/comments/1hjjf21/comment/m37fe4d/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-        cmdline = function()
-          local type = vim.fn.getcmdtype()
-          if type == '/' or type == '?' then
-            return { 'buffer' }
-          end
-          -- if type == ':' then
-          --   return { 'cmdline' }
-          -- end
-          return {}
-        end,
+        -- cmdline = function()
+        --   local type = vim.fn.getcmdtype()
+        --   if type == '/' or type == '?' then
+        --     return { 'buffer' }
+        --   end
+        --   -- if type == ':' then
+        --   --   return { 'cmdline' }
+        --   -- end
+        --   return {}
+        -- end,
       })
 
       opts.keymap = {

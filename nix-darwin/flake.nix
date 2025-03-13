@@ -41,8 +41,9 @@
           pkgs.cmake
           pkgs.fd
           pkgs.yq
+          pkgs.python312Packages.ledgerwallet
         ];
-      services.nix-daemon.enable = true;
+      # services.nix-daemon.enable = true;
       #services.sketchybar.enable = true;
 
       # Necessary for using flakes on this system.
@@ -59,7 +60,7 @@
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.keyboard.enableKeyMapping = true;
       system.keyboard.remapCapsLockToControl = true;
-      security.pam.enableSudoTouchIdAuth = true;
+      # security.pam.enableSudoTouchIdAuth = true;
 
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
@@ -69,7 +70,7 @@
       nixpkgs.hostPlatform = "aarch64-darwin";
       users.users.ops.home = "/Users/ops";
       users.users.ops.shell = pkgs.fish;
-      nix.useDaemon = true;
+      # nix.useDaemon = true;
       system.defaults = {
         dock.autohide = true;
         dock.mru-spaces = false;
@@ -99,7 +100,7 @@
         "nikitabobko/tap/aerospace"
         "alacritty"
         "vial"
-        "vlc"
+        #"vlc"
         "the-unarchiver"
         "1password"
         "1password-cli"
@@ -109,6 +110,8 @@
         "transmission"
         "obsidian"
         "ghostty"
+        "iina"
+        "spotify"
       ];
       homebrew.brews = [
       "tmux"
@@ -128,6 +131,7 @@
       "babel"
       "tree"
       "gum"
+      "jython"
       ];
     };
   in

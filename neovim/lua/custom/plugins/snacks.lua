@@ -1,6 +1,7 @@
 return {
   'folke/snacks.nvim',
   lazy = false,
+
   opts = {
     picker = {
       layout = {
@@ -9,11 +10,23 @@ return {
         height = 0.4,
         min_height = 10,
       },
+      list = {
+        keys = {
+          ['o'] = 'confirm',
+          ['v'] = 'edit_vsplit',
+          ['s'] = 'edit_split',
+        },
+      },
     },
     lazygit = {},
     input = {},
     gitbrowse = {},
     scroll = {},
+    explorer = {
+      layout = {
+        cycle = false,
+      },
+    },
     indent = {
       enabled = false, -- enable indent guides
 
@@ -24,6 +37,15 @@ return {
   },
 
   keys = {
+    {
+      '\\',
+      function()
+        Snacks.explorer {
+          layout = { layout = { position = 'right' } },
+        }
+      end,
+      desc = 'File Explorer',
+    },
     {
       '<leader>b',
       function()
@@ -86,6 +108,13 @@ return {
       '<leader>gc',
       function()
         Snacks.picker.git_log()
+      end,
+      desc = 'Git Log',
+    },
+    {
+      '<leader>go',
+      function()
+        Snacks.gitbrowse.open()
       end,
       desc = 'Git Log',
     },

@@ -4,8 +4,8 @@ return {
   version = false, -- set this if you want to always pull the latest change
   opts = {
     -- add any opts here
-    provider = 'deepseek',
-    auto_suggestions_provider = 'deepseek',
+    provider = 'or_claude',
+    auto_suggestions_provider = 'or_deepseek',
     behaviour = {
       auto_suggestions = true, -- Experimental stage
     },
@@ -15,6 +15,36 @@ return {
         api_key_name = 'DEEPSEEK_API_KEY',
         endpoint = 'https://api.deepseek.com/v1',
         model = 'deepseek-chat',
+      },
+      or_qwen = {
+        __inherited_from = 'openai',
+        api_key_name = 'OPENROUTER_API_KEY',
+        endpoint = 'https://openrouter.ai/api/v1',
+        model = 'qwen/qwen-max',
+      },
+      or_deepseek = {
+        __inherited_from = 'openai',
+        api_key_name = 'OPENROUTER_API_KEY',
+        endpoint = 'https://openrouter.ai/api/v1',
+        model = 'deepseek/deepseek-r1',
+      },
+      or_claude = {
+        __inherited_from = 'openai',
+        api_key_name = 'OPENROUTER_API_KEY',
+        endpoint = 'https://openrouter.ai/api/v1',
+        model = 'anthropic/claude-3.7-sonnet',
+      },
+      or_claude35 = {
+        __inherited_from = 'openai',
+        api_key_name = 'OPENROUTER_API_KEY',
+        endpoint = 'https://openrouter.ai/api/v1',
+        model = 'anthropic/claude-3.5-sonnet',
+      },
+      groq = {
+        __inherited_from = 'openai',
+        api_key_name = 'GROQ_API_KEY',
+        endpoint = 'https://api.groq.com/openai/v1/',
+        model = 'deepseek-r1-distill-llama-70b',
       },
       reason = {
         __inherited_from = 'openai',
