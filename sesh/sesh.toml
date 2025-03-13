@@ -35,7 +35,7 @@ script_path = "~/dotfiles/sesh/scripts/solidity_dev"
 
 [[session]]
 name = "🦀 Deploy rs"
-path = "~/work/rhinestone/core-modules/"
+path = "~/work/rhinestone/deploy-rs/"
 script_path = "~/dotfiles/sesh/scripts/solidity_dev"
 
 [[session]]

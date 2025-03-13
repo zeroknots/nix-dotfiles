@@ -32,7 +32,8 @@
           pkgs.bat
           pkgs.fish
           pkgs.sesh
-          pkgs.nerdfonts
+          pkgs.nerd-fonts.jetbrains-mono
+          pkgs.nerd-fonts.hack
           pkgs.wget
           pkgs.nodejs_23
           pkgs.tmux
@@ -41,16 +42,17 @@
           pkgs.cmake
           pkgs.fd
           pkgs.yq
+          pkgs.python312Packages.ledgerwallet
         ];
-      services.nix-daemon.enable = true;
+      # services.nix-daemon.enable = true;
       #services.sketchybar.enable = true;
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
-      fonts.packages = [
-        (pkgs.nerdfonts.override { fonts = ["JetBrainsMono" "Hack"];})
-      ];
+      # fonts.packages = [
+      #   (pkgs.nerdfonts.override { fonts = ["JetBrainsMono" "Hack"];})
+      # ];
 
       # Enable alternative shell support in nix-darwin.
       programs.fish.enable = true;
@@ -59,7 +61,7 @@
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.keyboard.enableKeyMapping = true;
       system.keyboard.remapCapsLockToControl = true;
-      security.pam.enableSudoTouchIdAuth = true;
+      # security.pam.enableSudoTouchIdAuth = true;
 
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
@@ -69,7 +71,7 @@
       nixpkgs.hostPlatform = "aarch64-darwin";
       users.users.ops.home = "/Users/ops";
       users.users.ops.shell = pkgs.fish;
-      nix.useDaemon = true;
+      # nix.useDaemon = true;
       system.defaults = {
         dock.autohide = true;
         dock.mru-spaces = false;
@@ -99,7 +101,7 @@
         "nikitabobko/tap/aerospace"
         "alacritty"
         "vial"
-        "vlc"
+        #"vlc"
         "the-unarchiver"
         "1password"
         "1password-cli"
@@ -109,6 +111,8 @@
         "transmission"
         "obsidian"
         "ghostty"
+        "iina"
+        "spotify"
       ];
       homebrew.brews = [
       "tmux"
@@ -127,6 +131,8 @@
       "graphviz"
       "babel"
       "tree"
+      "gum"
+      "jython"
       ];
     };
   in

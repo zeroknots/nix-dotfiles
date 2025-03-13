@@ -9,3 +9,5 @@ alias ftmt "forge test --mt"
 alias ripgrep "rg"
 
 alias gwa "git worktree add"
+
+alias nvim-new "nvim -u ~/dotfiles/kickstartnvim/init.lua"
